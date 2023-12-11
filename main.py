@@ -42,7 +42,8 @@ def scanner(expression):
             token_list.append(float(number))
         else:
             token_list.append(int(number))
-    #print("ANÁLISE LÉXICA 🆗! Não há caracteres inválidos.")
+    print("ANÁLISE LÉXICA 🆗! Não há caracteres inválidos.")
+    print("LISTA DE TOKENS: " + str(token_list))
     return token_list
 
 
@@ -96,8 +97,10 @@ def parser(output):
                         raise Exception("A expressão é inválida. Há uma divisão por zero.")
             except IndexError:
                 raise Exception("A expressão é inválida. Verifique se os operadores estão corretos.")
-    #print("ANÁLISE SINTÁTICA 🆗! Não há erros de sintaxe.")
-    return stack.pop()
+    print("ANÁLISE SINTÁTICA 🆗! Não há erros de sintaxe.")
+    resultado = stack.pop()
+    print("RESULTADO: " + str(resultado))
+    return resultado
 
 
 def calculator(expression):
