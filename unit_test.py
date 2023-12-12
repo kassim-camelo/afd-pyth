@@ -33,6 +33,8 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator("(2 + (3 / 4)) / 5"), 0.55)
         with self.assertRaises(Exception):
             calculator("1 + 2 +")
+            calculator("(2*5 + 3")
+            calculator("2 * (3 + 4")
 
 if __name__ == '__main__':
     unittest.main()

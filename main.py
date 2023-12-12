@@ -42,6 +42,7 @@ def scanner(expression):
             token_list.append(float(number))
         else:
             token_list.append(int(number))
+    print(token_list)
     #print("ANÁLISE LÉXICA 🆗! Não há caracteres inválidos.")
     return token_list
 
@@ -73,7 +74,6 @@ def infix_para_npr(token_list):
         output.append(operator_stack.pop())
     return output
 
-
 def parser(output):
     stack = []
     for token in output:
@@ -98,7 +98,6 @@ def parser(output):
                 raise Exception("A expressão é inválida. Verifique se os operadores estão corretos.")
     #print("ANÁLISE SINTÁTICA 🆗! Não há erros de sintaxe.")
     return stack.pop()
-
 
 def calculator(expression):
     return float(f"{parser(infix_para_npr(scanner(expression))):.4f}")
